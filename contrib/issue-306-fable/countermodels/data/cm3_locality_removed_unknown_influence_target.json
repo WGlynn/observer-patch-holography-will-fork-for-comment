@@ -1,0 +1,45 @@
+{
+  "schema": "oph.yang_mills.collar_gap_certificate.v1",
+  "scope": "calibration",
+  "claim_boundary": "COUNTERMODEL FIXTURE (must fail closed): influence references a collar type outside the finite table.",
+  "type_table": [
+    {
+      "id": "cm-locality-removed-001",
+      "rooted_neighborhood": "radius-1 rooted star (countermodel fixture)",
+      "boundary_sector_flags": [
+        "interior",
+        "ordinary_zero_obstruction"
+      ],
+      "local_alphabets": [
+        "binary_root",
+        "binary_neighbors"
+      ],
+      "potential_templates": [
+        "nearest_neighbor_pair"
+      ],
+      "complete_repaired_readback": "all registers except the root",
+      "conditional_kernel": "single-root exact Gibbs heat bath",
+      "rate_lower": "1",
+      "influences": [
+        {
+          "target_type": "cm-unlisted-influence-target",
+          "multiplicity": 1,
+          "upper": "1/2",
+          "conditional_rows": [
+            [
+              "1/4",
+              "3/4"
+            ],
+            [
+              "3/4",
+              "1/4"
+            ]
+          ]
+        }
+      ],
+      "refinement_targets": [
+        "cm-locality-removed-001"
+      ]
+    }
+  ]
+}

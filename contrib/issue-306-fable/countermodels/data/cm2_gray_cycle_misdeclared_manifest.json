@@ -1,0 +1,29 @@
+{
+  "schema": "oph.yang_mills.collar_gap_certificate.v1",
+  "scope": "calibration",
+  "claim_boundary": "COUNTERMODEL FIXTURE (validates arithmetically, gap_lower = 1): a string-level misdeclaration of the nonlocal Gray-cycle pair family of yang_mills_gap_clay_problem.tex lines 581-591. The declared rooted_neighborhood is FALSE for that family: block membership depends on the parity of ALL m bits. Demonstrates that faithfulness of the source signature (tex line 536, 'complete source signature') is load-bearing and sits outside the arithmetic checks.",
+  "type_table": [
+    {
+      "id": "cm-gray-misdeclared-000",
+      "rooted_neighborhood": "CLAIMED radius-1 rooted star; ACTUALLY requires the global parity of all m bits",
+      "boundary_sector_flags": [
+        "interior",
+        "ordinary_zero_obstruction"
+      ],
+      "local_alphabets": [
+        "binary_root",
+        "binary_neighbors"
+      ],
+      "potential_templates": [
+        "nearest_neighbor_pair"
+      ],
+      "complete_repaired_readback": "all registers except the root",
+      "conditional_kernel": "uniform law on each matched pair (perfectly mixing, rate 1)",
+      "rate_lower": "1",
+      "influences": [],
+      "refinement_targets": [
+        "cm-gray-misdeclared-000"
+      ]
+    }
+  ]
+}

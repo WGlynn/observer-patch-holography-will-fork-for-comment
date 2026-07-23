@@ -1,0 +1,37 @@
+OPH issue #306 finite countermodels: machine verification
+pinned upstream: origin/main ae6eccd113213c51cb44dc93c525452fd3679556
+----------------------------------------------------------------------------
+[PASS] CM1 mixing-removed (two-site heat-bath family, tex:574-581)
+       char poly of L equals x(x-2e)(x-(2-2e))(x-2) as a polynomial identity in e over Q: True
+       frozen endpoint e=0: L|support is the exact zero 2x2 matrix (gap exactly 0): True
+       exact family: eta(e)=1-2e -> 1, true gap 2e -> 0 (last tested gap = 1/2048); no uniform positive modulus exists once uniform mixing (G3) is dropped.
+       Locality is KEPT throughout: two sites, radius-1 conditionals, one bounded collar type.
+[PASS] CM2 locality-removed (Gray-cycle pair family, tex:581-591)
+       exact identity (I-E0)+(I-E1) = I - (S+S^-1)/2 and exact idempotent pair blocks: True
+       m= 3 n=   8: full-spectrum gap=2.929e-01 (=1-cos(2pi/n) within 1e-9), E1 flip positions used=2
+       m= 4 n=  16: full-spectrum gap=7.612e-02 (=1-cos(2pi/n) within 1e-9), E1 flip positions used=3
+       m= 5 n=  32: full-spectrum gap=1.921e-02 (=1-cos(2pi/n) within 1e-9), E1 flip positions used=4
+       m= 6 n=  64: full-spectrum gap=4.815e-03 (=1-cos(2pi/n) within 1e-9), E1 flip positions used=5
+       m= 7 n= 128: full-spectrum gap=1.205e-03 (=1-cos(2pi/n) within 1e-9), E1 flip positions used=6
+       m= 8 n= 256: full-spectrum gap=3.012e-04 (=1-cos(2pi/n) within 1e-9), E1 flip positions used=7
+       m= 9 n= 512: full-spectrum gap=7.530e-05 (=1-cos(2pi/n) within 1e-9), E1 flip positions used=8
+       m=10 n=1024: full-spectrum gap=1.882e-05 (=1-cos(2pi/n) within 1e-9), E1 flip positions used=9
+       minimal positive eigenvalue confirmed over the FULL spectrum (extends the
+       single-eigenvector check in code/yang_mills/test_collar_gap_certificate.py): True
+       nonlocality witness: parity(gray(k)) == k mod 2 for every state (True); block membership reads the parity of ALL m bits, and the E1 matching uses 9 distinct flip positions at m=10 (unbounded across the family: True), violating (G1) finite type table.
+       Mixing is KEPT: every pair kernel is uniform (rate 1, perfectly mixing), the law is the product fair-bit law.
+       positive control (locality restored, all m single-bit heat baths): gap = 1 uniformly in m = 3..8 (True), matching delta_* = c_*(1-eta_*) = 1.
+[PASS] CM0 reproduction (issue_306_theorem_contract_witness.json)
+       vendored verifier recomputes c_floor=3/4, eta_upper=1/2, gap_lower=3/8: True
+[PASS] CM3 certificate fail-closed on hypothesis removal
+       uniform mixing (G3) removed: eta = 1: rejected (Dobrushin upper bound must be < 1, got 1) [cm3_mixing_removed_eta_ge_1.json] expected-msg=True
+       locality (G1/G4) removed: refinement escapes the printed type table: rejected (cm-locality-removed-000: refinement leaves the finite active type table) [cm3_locality_removed_refinement_escape.json] expected-msg=True
+       locality removed: influence targets an unlisted type: rejected (cm-locality-removed-001: influence references an unknown type) [cm3_locality_removed_unknown_influence_target.json] expected-msg=True
+       rate floor (G2) removed: rate_lower = 0: rejected (cm-rate-floor-removed-000: rate lower bound must be positive) [cm3_rate_floor_removed.json] expected-msg=True
+[PASS] CM3b misdeclared nonlocal family: certificate accepts, operator refutes
+       validator emits gap_lower = 1 for the misdeclared manifest: True
+       true operator gap at m=10 is 1-cos(2pi/1024) = 1.882e-05 << 1
+       => the arithmetic checks alone do not certify the gap; the source-locality
+          declaration (rooted_neighborhood faithfulness) is the load-bearing hypothesis.
+----------------------------------------------------------------------------
+5/5 countermodel checks PASS

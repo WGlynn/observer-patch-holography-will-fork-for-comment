@@ -1,0 +1,12 @@
+'OPH.CollarGapFloor.exists_uniform_floor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OPH.CollarGapFloor.AdmissibleCollarTower.exists_uniform_floor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OPH.CollarGapFloor.sum_broken_ge_floor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OPH.CollarGapFloor.CommutingColorSpectrum.gap_of_floor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OPH.CollarGapFloor.degenerateRate_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OPH.CollarGapFloor.no_uniform_floor_of_degenerate_rates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OPH.CollarGapFloor.IncompleteColorSpectrum.gap_collapse_of_incomplete_repair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OPH.CollarGapFloor.incompleteWitness_collapses' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,29 @@
+{
+  "schema": "oph.yang_mills.collar_gap_certificate.v1",
+  "scope": "calibration",
+  "claim_boundary": "COUNTERMODEL FIXTURE (must fail closed): active-collar rate floor removed; rate_lower = 0.",
+  "type_table": [
+    {
+      "id": "cm-rate-floor-removed-000",
+      "rooted_neighborhood": "radius-1 rooted star (countermodel fixture)",
+      "boundary_sector_flags": [
+        "interior",
+        "ordinary_zero_obstruction"
+      ],
+      "local_alphabets": [
+        "binary_root",
+        "binary_neighbors"
+      ],
+      "potential_templates": [
+        "nearest_neighbor_pair"
+      ],
+      "complete_repaired_readback": "all registers except the root",
+      "conditional_kernel": "single-root exact Gibbs heat bath",
+      "rate_lower": "0",
+      "influences": [],
+      "refinement_targets": [
+        "cm-rate-floor-removed-000"
+      ]
+    }
+  ]
+}
